@@ -1,0 +1,170 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-stack {
+  z-index: 1;
+}
+
+.notification {
+  margin: 10px;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
+  z-index: 1;
+}
+
+.nav-link {
+  font-family: Roboto;
+  color: #18181b;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 10px;
+
+  &:hover {
+    font-weight: bold;
+    color: #68bcfc;
+  }
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+
+  .nav-link {
+    margin: 15px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 200;
+    color: black;
+    transition: background-color 0.1s;
+    position: relative;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: transparent;
+      cursor: pointer;
+      color: white;
+    }
+
+    &:hover::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(white 50%, orange 50%);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-size: 200% 200%;
+      background-position: 0% 100%;
+      -webkit-animation-name: nav-link-hover;
+      animation-name: nav-link-hover;
+      -webkit-animation-duration: 100ms;
+      animation-duration: 100ms;
+      -webkit-animation-direction: forward;
+      animation-direction: forward;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@-webkit-keyframes nav-link-hover {
+  from {
+    background-position: 100% 0%;
+  }
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes nav-link-hover {
+  from {
+    background-position: 100% 0%;
+  }
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link .logo {
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+div[role='dialog'] {
+  min-width: 500px !important;
+}
+
+.icons {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 7px;
+
+  .linkedin-icon,
+  .github-icon,
+  .cv-icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
+
+  .linkedin-icon {
+    color: #4c93d1;
+
+    &:hover {
+      color: darken(#4c93d1, 20%);
+    }
+  }
+
+  .github-icon {
+    &:hover {
+      color: lighten(black, 20%);
+    }
+  }
+
+  .cv-icon {
+    color: purple;
+
+    &:hover {
+      color: darken(purple, 20%);
+    }
+  }
+}
+
+.error-alert {
+  min-height: 50px;
+}
+
+.intro {
+  height: 500px;
+}
+
+.nav-more {
+  background: none !important;
+
+  .nav-more-icon {
+    padding: 10 10px;
+    color: black;
+  }
+}

@@ -1,0 +1,139 @@
+@import 'shared';
+
+:root {
+  --projectIndex: 0;
+  --unpinnedProjectIndex: 0;
+}
+
+.page-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  // height: 200px;
+  background-color: #0e0e10;
+
+  .page-header {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 54px;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 0;
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  .page-header-subtext {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 12px;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.project-list-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects {
+  width: 100%;
+  margin: auto;
+}
+
+.pinned-projects-wrapper {
+  box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
+  background-color: #0e0e10;
+}
+
+.pinned-projects {
+  display: flex;
+  justify-content: center;
+}
+
+.unpinned-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #272727;
+}
+
+.project {
+  opacity: 0;
+  margin: 20px;
+  width: 500px;
+
+  &:not(.pinned) {
+    -webkit-animation-name: fadeAndSlide;
+    animation-name: fadeAndSlide;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: calc(var(--projectIndex) * 100ms);
+    animation-delay: calc(var(--projectIndex) * 100ms);
+  }
+
+  &.pinned {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: calc(var(--pinnedProjectIndex) * 100ms);
+    animation-delay: calc(var(--pinnedProjectIndex) * 100ms);
+  }
+}
+
+.pinned {
+  opacity: 1 !important;
+  flex-grow: 0;
+}
+
+.no-projects-to-show {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.no-pinned-projects-to-show {
+  color: pink;
+  text-align: center;
+  margin: 50px;
+}
+
+@-webkit-keyframes fadeAndSlide {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAndSlide {
+  from {
+    opacity: 0;
+    margin-left: 300px;
+  }
+
+  to {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
