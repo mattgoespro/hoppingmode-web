@@ -3,8 +3,6 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
-    "api-interfaces": "libs/api-interfaces",
-    "hoppingmode-web": "apps/hoppingmode-web",
-    "hoppingmode-web-e2e": "apps/hoppingmode-web-e2e"
+    "api-interfaces": "libs/api-interfaces"
   }
 }
