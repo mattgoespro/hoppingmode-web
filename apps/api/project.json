@@ -32,19 +32,17 @@
         "buildTarget": "api:build"
       }
     },
+    "build-image": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build . -t hoppingmode-web/api"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/api/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/api"],
-      "options": {
-        "jestConfig": "apps/api/jest.config.ts",
-        "passWithNoTests": true
       }
     }
   },
