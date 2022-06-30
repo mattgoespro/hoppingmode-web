@@ -3,7 +3,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // function setDevServerApiHost(env) {
 //   let apiTarget = env['api-target'];
@@ -54,27 +53,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //   return apiHost;
 // }
 
-module.exports = (nxConfig, _nxOptions) => {
-  console.dir(nxConfig.plugins, 4);
-  return merge(nxConfig, myConfig());
-  // return merge(nxConfig, {});
-};
-
-function myConfig() {
-  return {
+module.exports = (nxConfig) => {
+  return merge(nxConfig, {
     resolve: {
       alias: {
         shared: path.resolve(__dirname, 'src/assets/styles/shared.scss')
       }
     },
-    plugins: [
-      // new HtmlWebpackPlugin({
-      //   template: path.resolve(__dirname, 'src/index.html'),
-      //   favicon: path.resolve(__dirname, 'src/favicon.ico'),
-      //   inject: true
-      // }),
-      new CleanWebpackPlugin()
-    ],
+    plugins: [new CleanWebpackPlugin()],
     module: {
       rules: [
         {
@@ -135,5 +121,5 @@ function myConfig() {
         }
       }
     }
-  };
-}
+  });
+};

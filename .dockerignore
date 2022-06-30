@@ -3,3 +3,7 @@ npm-debug.log
 temp
 .vscode
 dist
+.env.example
+.env
+README.md
+tools

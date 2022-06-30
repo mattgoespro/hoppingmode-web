@@ -75,14 +75,7 @@ export default function Project(props: ProjectProps) {
 
   return (
     <Card className="project-card">
-      {readmeDialogOpen && (
-        <ReadmeDialog
-          open={readmeDialogOpen}
-          project={repo}
-          projectPinned={pinned}
-          onClose={() => setReadmeDialogOpen(false)}
-        />
-      )}
+      {readmeDialogOpen && <ReadmeDialog open={readmeDialogOpen} project={repo} projectPinned={pinned} onClose={() => setReadmeDialogOpen(false)} />}
       <CardHeader
         className="project-header"
         style={{

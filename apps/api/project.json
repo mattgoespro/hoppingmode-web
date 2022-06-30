@@ -21,7 +21,8 @@
               "replace": "apps/api/src/environments/environment.ts",
               "with": "apps/api/src/environments/environment.prod.ts"
             }
-          ]
+          ],
+          "generatePackageJson": true
         }
       }
     },
@@ -35,14 +36,14 @@
     "build-image": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "docker build . -t hoppingmode-web/api"
+        "command": "docker build -f docker/api.dockerfile . -t hoppingmode-web/api"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/api/**/*.ts"]
+        "lintFilePatterns": ["apps/api/src/**/*.ts"]
       }
     }
   },

@@ -1,11 +1,9 @@
 {
+  "ignorePatterns": ["!**/*", "./*", "src/postcss.config.js", "src/polyfills.ts"],
   "extends": ["../../.eslintrc.json", "plugin:@nrwl/nx/react", "eslint-config-postcss"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "parserOptions": {
-        "project": ["apps/frontend/tsconfig.*?.json"]
-      },
+      "files": ["apps/frontend/src/**/*.ts", "apps/frontend/src/**/*.tsx", "apps/frontend/src/**/*.js", "apps/frontend/src/**/*.jsx"],
       "rules": {
         "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "$import*|^_", "caughtErrorsIgnorePattern": "^_" }]
       }

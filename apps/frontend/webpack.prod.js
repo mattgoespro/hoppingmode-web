@@ -1,9 +1,9 @@
 const { merge } = require('webpack-merge');
 
-module.exports = (nxConfig, nxOptions) => {
-  const webpackCommon = require('./webpack.common')(nxConfig, nxOptions);
+const webpackCommon = require('./webpack.common');
 
-  return merge(webpackCommon, {
+module.exports = (nxConfig, nxOptions) => {
+  return merge(webpackCommon(nxConfig, nxOptions), {
     mode: 'production',
     devtool: 'inline-source-map'
   });

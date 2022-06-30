@@ -42,7 +42,8 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "apps/frontend/webpack.prod.js"
+          "webpackConfig": "apps/frontend/webpack.prod.js",
+          "generatePackageJson": true
         }
       }
     },
@@ -64,11 +65,30 @@
         }
       }
     },
+    "build-image": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build -f docker/frontend.dockerfile . -t hoppingmode-web/frontend"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/frontend/src/**/*.ts", "apps/frontend/src/**/*.tsx", "apps/frontend/src/**/*.js", "apps/frontend/src/**/*.jsx"]
+      }
+    },
+    "lint:fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "eslint src --fix"
+          },
+          {
+            "command": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,md,json} --config ../../.prettierrc"
+          }
+        ]
       }
     },
     "test": {

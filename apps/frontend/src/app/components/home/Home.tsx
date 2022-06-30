@@ -1,11 +1,12 @@
 import './Home.scss';
 import 'react-vertical-timeline-component/style.min.css';
 import { Button, Tooltip } from '@mui/material';
-import Timeline from './timeline/Timeline';
 import { useState } from 'react';
 
+import Timeline from './timeline/Timeline';
+
 export default function Home() {
-  const [timelineVisible, setTimelineVisible] = useState(false);
+  let [timelineVisible, setTimelineVisible] = useState(false);
 
   return (
     <div className="home-wrapper">

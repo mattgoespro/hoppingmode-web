@@ -1,4 +1,5 @@
-# Ignore prettier formatting
+# Prettier ignore directories
 
-/dist
-/coverage
+dist
+coverage
+node_modules
