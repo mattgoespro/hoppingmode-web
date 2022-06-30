@@ -17,7 +17,7 @@ export default function ProjectLanguageChart(props: ProjectLanguageChartProps) {
     axios.get<{ [key: string]: number }>(`/api/repos/${project.name}/languages`).then((rsp) => {
       setLanguageComposition(rsp.data);
     });
-  }, []);
+  });
 
   const legendLabelColors = [
     '#64b5f6',

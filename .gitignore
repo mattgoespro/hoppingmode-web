@@ -24,7 +24,11 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
+# System Files
+.DS_Store
+Thumbs.db
+
+# Misc
 /.sass-cache
 /connect.lock
 /coverage
@@ -33,7 +37,5 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-
-# System Files
-.DS_Store
-Thumbs.db
+temp
+.env

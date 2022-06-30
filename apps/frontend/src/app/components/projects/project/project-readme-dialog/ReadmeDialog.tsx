@@ -47,7 +47,7 @@ export default function ReadmeDialog(props: ReadmeDialogProps) {
           statusText: err.response.statusText
         });
       });
-  }, []);
+  }, [project.name]);
 
   function getReadmeContent() {
     return readme.length > 0 ? (

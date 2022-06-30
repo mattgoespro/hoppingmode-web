@@ -76,10 +76,6 @@ class App extends React.Component<Record<string, unknown>, AppState> {
     });
   }
 
-  componentWillUnmount(): void {
-    this.state.notifySubscription.unsubscribe();
-  }
-
   render() {
     return (
       <div className="app">

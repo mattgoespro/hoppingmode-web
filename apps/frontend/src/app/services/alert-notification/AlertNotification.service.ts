@@ -15,9 +15,7 @@ class AlertNotificationService {
       message: statusText
     };
 
-    if (
-      this.notifications.find((n) => n.error === alert.error && n.message === alert.message) == null
-    ) {
+    if (this.notifications.find((n) => n.error === alert.error && n.message === alert.message) == null) {
       this.notifications.push(alert);
       this.notify.next(this.notifications);
     }
@@ -28,9 +26,7 @@ class AlertNotificationService {
   }
 
   public remove(alert: AlertNotificationDetails) {
-    this.notifications = this.notifications.filter(
-      (n) => n.error != alert.error && n.message != alert.message
-    );
+    this.notifications = this.notifications.filter((n) => n.error !== alert.error && n.message !== alert.message);
     this.notify.next(this.notifications);
   }
 
@@ -47,8 +43,8 @@ class AlertNotificationService {
       case 500:
         httpErrorString = 'Internal Server Error';
         break;
-      case 503:
-        httpErrorString = 'Service Unavailable';
+      case 504:
+        httpErrorString = 'Gateway Timeout';
         break;
       default:
         throw new Error(`Unrecognized HTTP error code '${httpErrorCode}'`);

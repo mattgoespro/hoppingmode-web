@@ -11,19 +11,19 @@ const _languages = (
           <div className="language-name typescript">
             <span>Type</span>Script
           </div>
-          <img src="images/logos/typescript.png" />
+          <img src="images/logos/typescript.png" alt="typescript" />
         </div>
       </Card>
       <Card className="card">
         <div className="language-card">
           <div className="language-name java">Java</div>
-          <img src="images/logos/java.png" />
+          <img src="images/logos/java.png" alt="java" />
         </div>
       </Card>
       <Card className="card">
         <div className="language-card">
           <div className="language-name dotnet">C#</div>
-          <img src="images/logos/dotnet.png" />
+          <img src="images/logos/dotnet.png" alt="dotnet" />
         </div>
       </Card>
     </div>
@@ -38,31 +38,31 @@ const _technologies = (
         <div className="technology-card">
           <div className="technology-name react">React</div>
           <div className="card-title-divider"></div>
-          <img src="images/logos/react.png" />
+          <img src="images/logos/react.png" alt="react" />
         </div>
       </Card>
       <Card className="card">
         <div className="technology-card">
           <div className="technology-name angular">Angular</div>
-          <img src="images/logos/angular.png" />
+          <img src="images/logos/angular.png" alt="angular" />
         </div>
       </Card>
       <Card className="card">
         <div className="technology-card">
           <div className="technology-name node">Node.js</div>
-          <img src="images/logos/node-js.png" />
+          <img src="images/logos/node-js.png" alt="node" />
         </div>
       </Card>
       <Card className="card">
         <div className="technology-card">
           <div className="technology-name spring">Spring</div>
-          <img src="images/logos/spring.png" />
+          <img src="images/logos/spring.png" alt="spring" />
         </div>
       </Card>
       <Card className="card">
         <div className="technology-card">
           <div className="technology-name postgresql">PostgreSQL</div>
-          <img src="images/logos/postgresql.png" />
+          <img src="images/logos/postgresql.png" alt="psql" />
         </div>
       </Card>
     </div>

@@ -24,14 +24,15 @@ export default function Timeline() {
           icon={
             <img
               src="https://github.com/mattgoespro/public-resources/blob/master/images/uct-logo.png?raw=true"
+              alt="uct-logo"
               style={{ display: 'flex' }}
             ></img>
           }
         >
           <h3 className="vertical-timeline-element-title">Education - Undergrad</h3>
           <p>
-            Enrolled at the University of Cape Town, double majoring in Computer Science and
-            Computer Games Development. Graduated with a B.Sc degree in Computer Science.
+            Enrolled at the University of Cape Town, double majoring in Computer Science and Computer Games Development. Graduated with a B.Sc degree
+            in Computer Science.
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -47,6 +48,7 @@ export default function Timeline() {
           icon={
             <img
               src="https://github.com/mattgoespro/public-resources/blob/master/images/uct-logo.png?raw=true"
+              alt="uct-logo"
               style={{ display: 'flex' }}
             ></img>
           }
