@@ -1,4 +1,4 @@
-import { ApiRepositoryResponseDTO } from "@hoppingmode-web/api-interfaces";
+import { ApiRepositoryResponseDTO } from '@hoppingmode-web/api-interfaces';
 
 export interface GithubRepositoryResponseDTO {
   name: string;

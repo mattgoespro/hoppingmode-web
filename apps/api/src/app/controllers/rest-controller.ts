@@ -1,15 +1,10 @@
-import { gql } from "graphql-request";
-import {
-  GithubGqlResponseDTO,
-  GithubRepositoryResponseDTO,
-  GithubApiRestErrorResponse,
-  GraphQlErrorResponse,
-} from "../app.model";
-import { Buffer } from "buffer";
-import { graphqlClient } from "../services/gql-client";
-import { axiosHttpClient } from "../services/http-client";
-import restServer from "../rest-server";
-import { ApiRepositoryResponseDTO, GithubRepositoryLanguageResponseDTO } from "@hoppingmode-web/api-interfaces";
+import { gql } from 'graphql-request';
+import { GithubGqlResponseDTO, GithubRepositoryResponseDTO, GithubApiRestErrorResponse, GraphQlErrorResponse } from '../app.model';
+import { Buffer } from 'buffer';
+import { graphqlClient } from '../services/gql-client';
+import { axiosHttpClient } from '../services/http-client';
+import restServer from '../rest-server';
+import { ApiRepositoryResponseDTO, GithubRepositoryLanguageResponseDTO } from '@hoppingmode-web/api-interfaces';
 
 export interface ApiClientDetails {
   githubRestApiTarget: string;
@@ -22,8 +17,8 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
   const gqlClient = graphqlClient(apiDetails);
   const httpClient = axiosHttpClient(apiDetails);
 
-  restServer.get("/", (_request, respond) => {
-    respond.send("Hello, this is dog.");
+  restServer.get('/', (_request, respond) => {
+    respond.send('Hello, this is dog.');
   });
 
   async function doesGitHubRepositoryExist(repoName: string) {
@@ -31,7 +26,7 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
     return repos.data.filter((repo) => repo.name === repoName).length > 0;
   }
 
-  restServer.get("/repos", (_request, respond) => {
+  restServer.get('/repos', (_request, respond) => {
     httpClient
       .get<GithubRepositoryResponseDTO[]>(`/users/mattgoespro/repos`)
       .then((resp) => {
@@ -41,7 +36,7 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
           description: repo.description,
           createdTimestamp: repo.created_at,
           updatedTimestamp: repo.updated_at,
-          link: repo.html_url,
+          link: repo.html_url
         }));
 
         respond.status(200).json(repos);
@@ -51,7 +46,7 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
       });
   });
 
-  restServer.get("/repos/pinned", (_request, respond) => {
+  restServer.get('/repos/pinned', (_request, respond) => {
     gqlClient
       .request<GithubGqlResponseDTO>(
         gql`
@@ -80,7 +75,7 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
       });
   });
 
-  restServer.get("/repos/:repoName/languages", async (request, respond) => {
+  restServer.get('/repos/:repoName/languages', async (request, respond) => {
     const repoName = request.params.repoName;
 
     if (await doesGitHubRepositoryExist(repoName)) {
@@ -97,7 +92,7 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
     }
   });
 
-  restServer.get("/repos/:repoName/readme", async (request, respond) => {
+  restServer.get('/repos/:repoName/readme', async (request, respond) => {
     const repoName = request.params.repoName;
     if (await doesGitHubRepositoryExist(repoName)) {
       httpClient

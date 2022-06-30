@@ -29,8 +29,7 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "api:build",
-        "test": "test"
+        "buildTarget": "api:build"
       }
     },
     "build-image": {

@@ -38,4 +38,3 @@ yarn-error.log
 testem.log
 /typings
 temp
-**/*.env

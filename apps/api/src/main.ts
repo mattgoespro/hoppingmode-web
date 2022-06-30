@@ -3,8 +3,10 @@ import generateBanner from 'figlet';
 import { RestApiServer } from './app/controllers/rest-controller';
 import { environment } from './environments/environment';
 
+console.log(process.env);
 // Init process variables
 delete process.env.GITHUB_API_PAT;
+
 dotenv.config();
 
 const githubApiPat = process.env.GITHUB_API_PAT as unknown as string;
@@ -25,4 +27,5 @@ RestApiServer({
       whitespaceBreak: true
     })
   );
+  console.log('\nListening on port 3000...');
 });
