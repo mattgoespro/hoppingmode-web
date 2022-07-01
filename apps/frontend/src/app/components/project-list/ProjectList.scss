@@ -1,7 +1,7 @@
 @import 'shared';
 
 :root {
-  --projectIndex: 0;
+  --pinnedProjectIndex: 0;
   --unpinnedProjectIndex: 0;
 }
 
@@ -84,8 +84,8 @@
     animation-fill-mode: forwards;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
-    -webkit-animation-delay: calc(var(--projectIndex) * 100ms);
-    animation-delay: calc(var(--projectIndex) * 100ms);
+    -webkit-animation-delay: calc(var(--unpinnedProjectIndex) * 100ms);
+    animation-delay: calc(var(--unpinnedProjectIndex) * 100ms);
   }
 
   &.pinned {

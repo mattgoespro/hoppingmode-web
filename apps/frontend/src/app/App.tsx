@@ -7,12 +7,15 @@ import CvDownloadIcon from '../assets/svg/cv.svg';
 import { Stack, Tooltip } from '@mui/material';
 import { StrictMode } from 'react';
 import About from './components/about/About';
-import ProjectList from './components/projects/ProjectList';
+import ProjectList from './components/project-list/ProjectList';
 import Home from './components/home/Home';
 import React from 'react';
 import { Subscription } from 'rxjs';
-import AlertNotificationService, { AlertNotificationDetails } from './services/alert-notification/AlertNotification.service';
+import AlertNotificationService, {
+  AlertNotificationDetails
+} from './services/alert-notification/AlertNotification.service';
 import AlertNotification from './services/alert-notification/AlertNotification';
+import ProjectListComponent from './components/project-list/ProjectList';
 
 function navBar() {
   return (
@@ -37,7 +40,10 @@ function navBar() {
           </a>
         </Tooltip>
         <Tooltip title="LinkedIn">
-          <a href="https://www.linkedin.com/in/matt-young-691b48189/" target="tab">
+          <a
+            href="https://www.linkedin.com/in/matt-young-691b48189/"
+            target="tab"
+          >
             <SvgIcon className="linkedin-icon">{<LinkedInLogo />}</SvgIcon>
           </a>
         </Tooltip>
@@ -56,8 +62,8 @@ interface AppState {
   notifications: AlertNotificationDetails[];
 }
 
-class App extends React.Component<Record<string, unknown>, AppState> {
-  constructor(props: Record<string, unknown>) {
+class App extends React.Component<{}, AppState> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -68,11 +74,13 @@ class App extends React.Component<Record<string, unknown>, AppState> {
 
   componentDidMount() {
     this.setState({
-      notifySubscription: AlertNotificationService.notify.subscribe((notifications) => {
-        this.setState({
-          notifications
-        });
-      })
+      notifySubscription: AlertNotificationService.notify.subscribe(
+        (notifications) => {
+          this.setState({
+            notifications
+          });
+        }
+      )
     });
   }
 
@@ -80,26 +88,25 @@ class App extends React.Component<Record<string, unknown>, AppState> {
     return (
       <div className="app">
         {navBar()}
-        {this.state.notifications.length > 0 && (
-          <Stack className="notification-stack">
-            <div>
-              {this.state.notifications.map((notification, index) => {
-                return (
-                  <div key={index} className="notification">
-                    <AlertNotification
-                      alert={notification}
-                      onClose={() => {
-                        AlertNotificationService.remove(notification);
-                      }}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </Stack>
-        )}
-        <div className="error-notifications-tray"></div>
         <div>
+          {/* {this.state.notifications.length > 0 && (
+            <Stack className="notification-stack">
+              <div>
+                {this.state.notifications.map((notification, index) => {
+                  return (
+                    <div key={index} className="notification">
+                      <AlertNotification
+                        alert={notification}
+                        onClose={() => {
+                          AlertNotificationService.remove(notification);
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </Stack>
+          )} */}
           <Outlet />
         </div>
       </div>
@@ -114,7 +121,7 @@ export default function AppRoutes() {
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="home" element={<Home />} />
-            <Route path="projects" element={<ProjectList />}></Route>
+            <Route path="projects" element={<ProjectListComponent />}></Route>
             <Route path="about" element={<About />} />
             <Route path="*" />
           </Route>

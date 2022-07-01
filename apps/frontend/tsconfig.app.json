@@ -4,10 +4,10 @@
     "outDir": "../../dist/out-tsc",
     "types": ["node"]
   },
-  "paths": {
-    "styles": ["./src/assets/styles/shared.scss"]
-  },
-  "files": ["../../node_modules/@nrwl/react/typings/cssmodule.d.ts", "../../node_modules/@nrwl/react/typings/image.d.ts"],
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ],
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",

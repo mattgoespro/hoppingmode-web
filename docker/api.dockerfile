@@ -8,8 +8,6 @@ RUN npm ci
 
 COPY . ./
 
-RUN npx nx build api
-
-CMD [ "nx", "serve", "api" ]
+CMD [ "npx", "nx", "serve", "api" ]
 
 EXPOSE 8080

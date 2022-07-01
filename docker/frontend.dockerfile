@@ -1,4 +1,3 @@
-# Build frontend
 FROM node:16
 
 WORKDIR /usr/apps/api

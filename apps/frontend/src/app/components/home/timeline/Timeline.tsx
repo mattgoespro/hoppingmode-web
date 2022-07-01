@@ -1,8 +1,13 @@
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement
+} from 'react-vertical-timeline-component';
 import './Timeline.scss';
 
 export default function Timeline() {
-  const timelineArrowStyle: React.CSSProperties = { borderRight: '7px solid  #ff9800' };
+  const timelineArrowStyle: React.CSSProperties = {
+    borderRight: '7px solid  #ff9800'
+  };
   const timelineContentStyle: React.CSSProperties = {
     background: '#283593',
     color: '#fff'
@@ -29,9 +34,12 @@ export default function Timeline() {
             ></img>
           }
         >
-          <h3 className="vertical-timeline-element-title">Education - Undergrad</h3>
+          <h3 className="vertical-timeline-element-title">
+            Education - Undergrad
+          </h3>
           <p>
-            Enrolled at the University of Cape Town, double majoring in Computer Science and Computer Games Development. Graduated with a B.Sc degree
+            Enrolled at the University of Cape Town, double majoring in Computer
+            Science and Computer Games Development. Graduated with a B.Sc degree
             in Computer Science.
           </p>
         </VerticalTimelineElement>
@@ -53,8 +61,13 @@ export default function Timeline() {
             ></img>
           }
         >
-          <h3 className="vertical-timeline-element-title">Education - Honours</h3>
-          <p>Enrolled in the Computer Science honours course at the University of Cape Town.</p>
+          <h3 className="vertical-timeline-element-title">
+            Education - Honours
+          </h3>
+          <p>
+            Enrolled in the Computer Science honours course at the University of
+            Cape Town.
+          </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </div>

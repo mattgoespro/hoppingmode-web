@@ -1,17 +1,26 @@
-// import { css } from '@emotion/react';
 import { FadeLoader } from 'react-spinners';
 import './Spinner.scss';
 
-export function getSpinner(loading: boolean, foreground?: boolean) {
+interface SpinnerProps {
+  loading: boolean;
+  foreground?: boolean;
+}
+
+export function Spinner(props: SpinnerProps) {
   return (
-    <div className="spinner" style={{ zIndex: foreground ? 1 : 0 }}>
+    <div
+      className="spinner"
+      style={{
+        position: props.foreground != null ? 'absolute' : 'initial'
+      }}
+    >
       <FadeLoader
         color="#919191"
-        loading={loading}
+        loading={props.loading}
         speedMultiplier={1.5}
-        // css={css`
-        //   transform: scale(0.7);
-        // `}
+        width={10}
+        height={10}
+        radius={5}
       />
     </div>
   );

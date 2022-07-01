@@ -1,15 +1,22 @@
-import { Card, CardContent, CardHeader, Collapse, IconButton, Tooltip } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Collapse,
+  IconButton,
+  Tooltip
+} from '@mui/material';
 import { GitHub } from '@mui/icons-material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
-import ReadmeDialog from './project-readme-dialog/ReadmeDialog';
-import ProjectLanguageChart from './project-language-chart/ProjectLanguageChart';
 import { useState } from 'react';
 import { format } from 'date-fns';
 import LinkIcon from '@mui/icons-material/Link';
 import HelpIcon from '@mui/icons-material/Help';
 import './Project.scss';
-import { ApiRepositoryResponseDTO } from '../Project';
+import { ApiRepositoryResponseDTO } from '@hoppingmode-web/api-interfaces';
+import ReadmeDialog from './readme-dialog/ReadmeDialog';
+import LanguageChart from './language-chart/LanguageChart';
 
 interface ProjectProps {
   repo: ApiRepositoryResponseDTO;
@@ -63,8 +70,13 @@ export default function Project(props: ProjectProps) {
                 float: 'right'
               }}
             >
-              <IconButton className="title-icon-button view-readme" onClick={handleExpandClick}>
-                <ExpandMoreIcon className={expanded ? 'expand-icon' : 'collapse-icon'} />
+              <IconButton
+                className="title-icon-button view-readme"
+                onClick={handleExpandClick}
+              >
+                <ExpandMoreIcon
+                  className={expanded ? 'expand-icon' : 'collapse-icon'}
+                />
               </IconButton>
             </span>
           )}
@@ -75,7 +87,15 @@ export default function Project(props: ProjectProps) {
 
   return (
     <Card className="project-card">
-      {readmeDialogOpen && <ReadmeDialog open={readmeDialogOpen} project={repo} projectPinned={pinned} onClose={() => setReadmeDialogOpen(false)} />}
+      {readmeDialogOpen && (
+        <ReadmeDialog
+          open={readmeDialogOpen}
+          project={repo}
+          pinned
+          readme=""
+          onDialogClose={() => setReadmeDialogOpen(false)}
+        />
+      )}
       <CardHeader
         className="project-header"
         style={{
@@ -94,18 +114,26 @@ export default function Project(props: ProjectProps) {
       <CardContent>
         <div className="description-wrapper">
           <h3 className="title-description">Description</h3>
-          <div className="description">{repo.description || <i>Not available.</i>}</div>
+          <div className="description">
+            {repo.description || <i>Not available.</i>}
+          </div>
         </div>
       </CardContent>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         {expanded && (
           <CardContent>
             <div className="summary-repo">
-              <span>Created: {format(new Date(repo.createdTimestamp), 'dd-MM-yyyy p')}</span>
-              <span>Last Updated: {format(new Date(repo.updatedTimestamp), 'dd-MM-yyyy p')}</span>
+              <span>
+                Created:{' '}
+                {format(new Date(repo.createdTimestamp), 'dd-MM-yyyy p')}
+              </span>
+              <span>
+                Last Updated:{' '}
+                {format(new Date(repo.updatedTimestamp), 'dd-MM-yyyy p')}
+              </span>
             </div>
             <div className="divider"></div>
-            {<ProjectLanguageChart project={repo} />}
+            {<LanguageChart projectName={this.props.project.name} />}
             {<div className="divider"></div>}
           </CardContent>
         )}
