@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "nx serve frontend --configuration=development",
     "build": "nx run-many --target=build --projects=frontend,api --configuration=production --parallel",
+    "lint": "nx run-many --target=lint --projects=frontend,api",
     "docker:build": "nx run-many --target=build-image --projects=frontend,api --parallel",
     "docker:build-api": "nx build-image api",
     "docker:build-frontend": "nx build-image frontend",

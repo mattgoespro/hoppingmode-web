@@ -13,12 +13,7 @@ interface ProjectReadmeDialogProps {
   onDialogClose: () => void;
 }
 
-interface ProjectReadmeDialogState {}
-
-class ReadmeDialog extends React.Component<
-  ProjectReadmeDialogProps,
-  ProjectReadmeDialogState
-> {
+class ReadmeDialog extends React.Component<ProjectReadmeDialogProps, unknown> {
   constructor(
     props: ProjectReadmeDialogProps,
     private markdownParser: MarkdownParser,

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Timeline from './timeline/Timeline';
 
 export default function Home() {
-  let [timelineVisible, setTimelineVisible] = useState(false);
+  const [timelineVisible, setTimelineVisible] = useState(false);
 
   return (
     <div className="home-wrapper">

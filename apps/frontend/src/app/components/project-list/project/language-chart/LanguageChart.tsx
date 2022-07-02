@@ -22,10 +22,6 @@ class LanguageChart extends React.Component<
   LanguageChartProps,
   LanguageChartState
 > {
-  constructor(props: LanguageChartProps) {
-    super(props);
-  }
-
   async componentDidMount() {
     try {
       const languages = (
@@ -37,7 +33,9 @@ class LanguageChart extends React.Component<
         languageComposition: languages,
         chartData: calculateChartData(languages)
       });
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   render(): React.ReactNode {
