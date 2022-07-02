@@ -1,11 +1,13 @@
 FROM node:16
 
-WORKDIR /usr/apps/api
+WORKDIR /usr/apps/frontend
 
-COPY package*.json ./
+COPY package*.json .
 
 RUN npm ci
 
-COPY . ./
+COPY . .
 
-RUN npx nx build frontend
+CMD [ "npx", "nx", "serve", "frontend", "--configuration=development" ]
+
+EXPOSE 80

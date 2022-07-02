@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: hoppingmode-web/frontend
+    ports:
+      - '80:4200'
+    networks:
+      - hoppingmode-web
+    depends_on:
+      - api
+  api:
+    image: hoppingmode-web/api
+    ports:
+      - '8080:3000'
+    networks:
+      - hoppingmode-web
+
+networks:
+  hoppingmode-web:

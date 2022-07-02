@@ -2,11 +2,11 @@ FROM node:16
 
 WORKDIR /usr/apps/api
 
-COPY package*.json ./
+COPY package*.json .
 
 RUN npm ci
 
-COPY . ./
+COPY . .
 
 CMD [ "npx", "nx", "serve", "api" ]
 

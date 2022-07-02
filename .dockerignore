@@ -1,7 +1,22 @@
+
+# Node dependencies
 node_modules
+
+# npm installation error logs
 npm-debug.log
-temp
+
+# IDE - VSCode
 .vscode
-dist
-README.md
-tools
+
+# Git
+.git
+.gitignore
+
+# Misc
+docker
+*.md
+*.md
+.gitignore
+.prettierignore
+.prettierrc
+temp

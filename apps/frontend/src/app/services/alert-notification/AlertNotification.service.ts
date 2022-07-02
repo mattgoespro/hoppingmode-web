@@ -15,7 +15,11 @@ class AlertNotificationService {
       message: statusText
     };
 
-    if (this.notifications.find((n) => n.error === alert.error && n.message === alert.message) == null) {
+    if (
+      this.notifications.find(
+        (n) => n.error === alert.error && n.message === alert.message
+      ) == null
+    ) {
       this.notifications.push(alert);
       this.notify.next(this.notifications);
     }
@@ -26,7 +30,9 @@ class AlertNotificationService {
   }
 
   public remove(alert: AlertNotificationDetails) {
-    this.notifications = this.notifications.filter((n) => n.error !== alert.error && n.message !== alert.message);
+    this.notifications = this.notifications.filter(
+      (n) => n.error !== alert.error && n.message !== alert.message
+    );
     this.notify.next(this.notifications);
   }
 
