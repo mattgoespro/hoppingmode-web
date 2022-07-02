@@ -1,5 +1,2 @@
 # Prettier - ignore formatting directories
-
-dist
-coverage
 node_modules

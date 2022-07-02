@@ -75,7 +75,12 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/frontend/src/**/*.ts", "apps/frontend/src/**/*.tsx", "apps/frontend/src/**/*.js", "apps/frontend/src/**/*.jsx"]
+        "lintFilePatterns": [
+          "apps/frontend/src/**/*.ts",
+          "apps/frontend/src/**/*.tsx",
+          "apps/frontend/src/**/*.js",
+          "apps/frontend/src/**/*.jsx"
+        ]
       }
     },
     "lint:fix": {

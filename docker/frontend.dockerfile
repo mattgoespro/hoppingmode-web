@@ -8,6 +8,6 @@ RUN npm ci
 
 COPY . .
 
-CMD [ "npx", "nx", "serve", "frontend", "--configuration=development" ]
+CMD [ "npx", "nx", "serve", "frontend", "--configuration=production" ]
 
-EXPOSE 80
+EXPOSE 4200
