@@ -8,12 +8,7 @@ interface SpinnerProps {
 
 export function Spinner(props: SpinnerProps) {
   return (
-    <div
-      className="spinner"
-      style={{
-        position: props.foreground != null ? 'absolute' : 'initial'
-      }}
-    >
+    <div className="spinner">
       <FadeLoader
         color="#919191"
         loading={props.loading}

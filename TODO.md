@@ -2,19 +2,15 @@
 
 ## In Progress
 
-- Alert API call failures.
-- 504 Gateway timeout
-- 500 Internal server error (should not happen)
-- 403 Unauthorized (backend auth configuration error)
+- Clear alerts on navigate
+- Fix slow loading of network images
 - Convert pure functions to class components.
 - Configure eslint
-- Utilize nginx docker container as proxy server.
 
 ## General
 
+- Utilize nginx docker container as proxy server.
 - Get _simplebar-react_ scrollbar working.
-
-## Styles
 
 ## Tech Debt
 
@@ -23,4 +19,5 @@
 
 ## Nice to have
 
+- Have docker only install required dependencies for each app
 - Redux for caching (probably not necessary)

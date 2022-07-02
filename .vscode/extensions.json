@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint",
-    "naumovs.color-highlight"
+    "naumovs.color-highlight",
+    "burkeholland.simple-react-snippets"
   ]
 }

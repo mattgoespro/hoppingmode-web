@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import generateBanner from 'figlet';
-import { RestApiServer } from './app/controllers/rest-controller';
+import { RestApiServer } from './app/controllers/rest-controller.service';
 import { environment } from './environments/environment';
 
 // Init process variables

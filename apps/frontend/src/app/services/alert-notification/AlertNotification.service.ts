@@ -1,63 +1,51 @@
 import { Subject } from 'rxjs/internal/Subject';
 
-export interface AlertNotificationDetails {
-  error: string;
+export interface ErrorNotification {
+  status: number;
   message: string;
 }
 
-class AlertNotificationService {
-  private notifications: AlertNotificationDetails[] = [];
-  public notify: Subject<AlertNotificationDetails[]> = new Subject();
+class ErrorNotificationService {
+  private notifications: ErrorNotification[] = [];
+  public notify: Subject<ErrorNotification[]> = new Subject();
 
-  public log({ status, statusText }) {
-    const alert = {
-      error: this.httpErrorToString(status),
-      message: statusText
+  public log(error) {
+    const notification: ErrorNotification = {
+      status: error.statusCode,
+      message: this.parseErrorResponseMessage(error)
     };
 
     if (
       this.notifications.find(
-        (n) => n.error === alert.error && n.message === alert.message
+        (n) =>
+          n.status === notification.status && n.message === notification.message
       ) == null
     ) {
-      this.notifications.push(alert);
+      this.notifications.push(notification);
       this.notify.next(this.notifications);
     }
+  }
+
+  private parseErrorResponseMessage(error) {
+    const statusCode = error.response?.status;
+
+    if (statusCode === 504 || statusCode === 401 || statusCode === 403) {
+      return 'An unexpected error has occurred. Please try again.';
+    }
+
+    return error.message;
   }
 
   public getNotifications() {
     return this.notifications;
   }
 
-  public remove(alert: AlertNotificationDetails) {
+  public remove(alert: ErrorNotification) {
     this.notifications = this.notifications.filter(
-      (n) => n.error !== alert.error && n.message !== alert.message
+      (n) => n.status !== alert.status && n.message !== alert.message
     );
     this.notify.next(this.notifications);
   }
-
-  private httpErrorToString(httpErrorCode: number): string {
-    let httpErrorString: string;
-
-    switch (httpErrorCode) {
-      case 401:
-        httpErrorString = 'Forbidden';
-        break;
-      case 404:
-        httpErrorString = 'Not Found';
-        break;
-      case 500:
-        httpErrorString = 'Internal Server Error';
-        break;
-      case 504:
-        httpErrorString = 'Gateway Timeout';
-        break;
-      default:
-        throw new Error(`Unrecognized HTTP error code '${httpErrorCode}'`);
-    }
-
-    return httpErrorString;
-  }
 }
 
-export default new AlertNotificationService();
+export default new ErrorNotificationService();
