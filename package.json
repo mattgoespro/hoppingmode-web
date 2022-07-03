@@ -9,7 +9,7 @@
     "docker:build": "nx run-many --target=build-image --projects=frontend,api --parallel",
     "docker:build-api": "nx build-image api",
     "docker:build-frontend": "nx build-image frontend",
-    "hoppingmode-web:start": "docker-compose -f docker/docker-compose.yaml -p hoppingmode-web up "
+    "hoppingmode-web:start": "docker-compose -f docker/docker-compose.yaml -p hoppingmode-web up -d"
   },
   "private": true,
   "dependencies": {
