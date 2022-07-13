@@ -86,6 +86,7 @@
     "jest": "27.5.1",
     "mini-css-extract-plugin": "^2.6.1",
     "nx": "^14.3.6",
+    "postcss": "^8.4.14",
     "postcss-fail-on-warn": "^0.2.1",
     "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
