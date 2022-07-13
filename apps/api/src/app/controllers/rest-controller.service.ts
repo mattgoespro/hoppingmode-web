@@ -30,10 +30,9 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
   });
 
   async function doesGitHubRepositoryExist(repoName: string) {
-    const repos = await httpClient.get<GithubRepositoryResponseDTO[]>(
-      `/users/mattgoespro/repos`
+    return httpClient.get<GithubRepositoryResponseDTO[]>(
+      `/users/mattgoespro/repos/${repoName}`
     );
-    return repos.data.filter((repo) => repo.name === repoName).length > 0;
   }
 
   restServer.get('/repos', (_request, respond) => {
@@ -96,54 +95,59 @@ export const RestApiServer = (apiDetails: ApiClientDetails) => {
   restServer.get('/repos/:repoName/languages', async (request, respond) => {
     const repoName = request.params.repoName;
 
-    if (await doesGitHubRepositoryExist(repoName)) {
-      httpClient
-        .get<GithubRepositoryLanguageResponseDTO>(
-          `/repos/mattgoespro/${repoName}/languages`
+    doesGitHubRepositoryExist(repoName)
+      .then(() =>
+        httpClient
+          .get<GithubRepositoryLanguageResponseDTO>(
+            `/repos/mattgoespro/${repoName}/languages`
+          )
+          .then((resp) => {
+            respond.status(200).json(resp.data);
+          })
+          .catch((err: GithubApiErrorResponse) => {
+            respondWithApiError(
+              err,
+              `Unable to retrieve languages for project '${repoName}'.`,
+              respond
+            );
+          })
+      )
+      .catch(() =>
+        respondWithApiError(
+          404,
+          `Project '${repoName}' does not exist.`,
+          respond
         )
-        .then((resp) => {
-          respond.status(200).json(resp.data);
-        })
-        .catch((err: GithubApiErrorResponse) => {
-          respondWithApiError(
-            err,
-            `Unable to retrieve languages for project '${repoName}'.`,
-            respond
-          );
-        });
-    } else {
-      respondWithApiError(
-        404,
-        `Project '${repoName}' does not exist.`,
-        respond
       );
-    }
   });
 
   restServer.get('/repos/:repoName/readme', async (request, respond) => {
     const repoName = request.params.repoName;
-    if (await doesGitHubRepositoryExist(repoName)) {
-      httpClient
-        .get<{ content: string; encoding: BufferEncoding }>(
-          `/repos/mattgoespro/${repoName}/contents/README.md`
+
+    doesGitHubRepositoryExist(repoName)
+      .then(() =>
+        httpClient
+          .get<{ content: string; encoding: BufferEncoding }>(
+            `/repos/mattgoespro/${repoName}/contents/README.md`
+          )
+          .then((rsp) => {
+            const readme = Buffer.from(
+              rsp.data.content,
+              rsp.data.encoding
+            ).toString();
+            respond.status(200).send(readme);
+          })
+          .catch((err: GithubApiErrorResponse) => {
+            respond.status(err.response.status).send(err.response);
+          })
+      )
+      .catch(() =>
+        respondWithApiError(
+          404,
+          `Project '${repoName}' does not exist.`,
+          respond
         )
-        .then((rsp) => {
-          const readme = Buffer.from(
-            rsp.data.content,
-            rsp.data.encoding
-          ).toString();
-          respond.status(200).send(readme);
-        })
-        .catch((err: GithubApiErrorResponse) => {
-          respond.status(err.response.status).send(err.response);
-        });
-    } else {
-      respondWithApiError(
-        404,
-        `Project '${repoName}' does not exist.`,
-        respond
       );
-    }
   });
 
   return restServer;

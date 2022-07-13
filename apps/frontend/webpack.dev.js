@@ -1,4 +1,3 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
 const { merge } = require('webpack-merge');
@@ -15,10 +14,6 @@ module.exports = (nxConfig, nxOptions) => {
         typescript: {
           configFile: path.resolve(__dirname, 'tsconfig.app.json')
         }
-      }),
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        openAnalyzer: false
       })
     ],
     devServer: {

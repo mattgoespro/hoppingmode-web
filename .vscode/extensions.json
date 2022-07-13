@@ -5,6 +5,7 @@
     "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint",
     "naumovs.color-highlight",
-    "burkeholland.simple-react-snippets"
+    "burkeholland.simple-react-snippets",
+    "ahmadalli.vscode-nginx-conf"
   ]
 }
