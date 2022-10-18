@@ -18,7 +18,4 @@ export interface RepositoryDetails {
   readmeDoc: string;
 }
 
-export interface RepositoryLanguages {
-  language: string;
-  bytes: number;
-}
+export type RepositoryLanguages = { [key: string]: number };
