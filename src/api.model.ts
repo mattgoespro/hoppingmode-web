@@ -1,7 +1,3 @@
-export interface ApiResponse<T> {
-  payload: T;
-}
-
 export interface RepositorySummary {
   name: string;
   description: string;
@@ -9,11 +5,16 @@ export interface RepositorySummary {
   githubUrl: string;
 }
 
+export interface PortfolioSpec {
+  name: string;
+  skills: string[];
+}
+
 export interface RepositoryDetails {
   name: string;
   createdTimestamp: string;
   updatedTimestamp: string;
-  portfolioSpec: string;
+  portfolioSpec: PortfolioSpec;
   readmeDoc: string;
 }
 
