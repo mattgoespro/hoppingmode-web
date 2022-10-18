@@ -1,7 +1,7 @@
 {
   "name": "@mattgoespro/hoppingmode-web",
   "author": "mattgoespro",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Shared package for hoppingmode-web-api and hoppingmode-web-frontend.",
   "main": "index.ts",
   "scripts": {
