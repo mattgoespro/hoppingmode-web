@@ -10,7 +10,7 @@ export interface PortfolioSpec {
   skills: string[];
 }
 
-export interface RepositoryStats {
+export interface Stats {
   createdTimestamp: string;
   updatedTimestamp: string;
   totalCommits: number;
@@ -18,9 +18,9 @@ export interface RepositoryStats {
 
 export interface RepositoryDetails {
   name: string;
-  stats: RepositoryStats;
+  stats: Stats;
   portfolioSpec: PortfolioSpec;
-  readmeDoc: string;
+  readmeBase64: string;
 }
 
 export type RepositoryLanguages = { [key: string]: number };
