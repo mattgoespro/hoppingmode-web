@@ -1,1 +1,1 @@
-export * from "./src/api.model";
+export * from "./lib/api.model";
