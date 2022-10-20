@@ -1,3 +1,5 @@
+import { Encoding } from "crypto";
+
 export interface RepositorySummary {
   name: string;
   description: string;
@@ -5,9 +7,9 @@ export interface RepositorySummary {
   githubUrl: string;
 }
 
-export interface PortfolioSpec {
-  name: string;
-  skills: string[];
+export interface ProjectSpecification {
+  title: string;
+  technicalSkills: string[];
 }
 
 export interface Stats {
@@ -16,11 +18,16 @@ export interface Stats {
   totalCommits: number;
 }
 
-export interface RepositoryDetails {
+export interface ReadmeDocument {
+  content: string;
+  encoding: Encoding;
+}
+
+export interface Repository {
   name: string;
   stats: Stats;
-  portfolioSpec: PortfolioSpec;
+  projectSpec: ProjectSpecification;
   readmeBase64: string;
 }
 
-export type RepositoryLanguages = { [key: string]: number };
+export type ProgrammingLanguages = { [key: string]: number };
