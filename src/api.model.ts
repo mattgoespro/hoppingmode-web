@@ -10,10 +10,15 @@ export interface PortfolioSpec {
   skills: string[];
 }
 
-export interface RepositoryDetails {
-  name: string;
+export interface RepositoryStats {
   createdTimestamp: string;
   updatedTimestamp: string;
+  totalCommits: number;
+}
+
+export interface RepositoryDetails {
+  name: string;
+  stats: RepositoryStats;
   portfolioSpec: PortfolioSpec;
   readmeDoc: string;
 }
