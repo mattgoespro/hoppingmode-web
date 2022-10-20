@@ -1,7 +1,7 @@
 {
   "name": "@mattgoespro/hoppingmode-web",
   "author": "mattgoespro",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Shared package for hoppingmode-web-api and hoppingmode-web-frontend.",
   "main": "index.ts",
   "scripts": {
@@ -19,15 +19,6 @@
   "homepage": "https://github.com/mattgoespro/hoppingmode-web#readme",
   "devDependencies": {
     "@types/node": "^18.11.0",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "eslint": "^8.25.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.0",
     "tslib": "^2.4.0",
     "typescript": "^4.8.4"
   }

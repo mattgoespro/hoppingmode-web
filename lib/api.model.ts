@@ -27,7 +27,7 @@ export interface Repository {
   name: string;
   stats: Stats;
   projectSpec: ProjectSpecification;
-  readmeBase64: string;
+  readme: ReadmeDocument;
 }
 
 export type ProgrammingLanguages = { [key: string]: number };

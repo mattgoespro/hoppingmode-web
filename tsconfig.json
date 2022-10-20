@@ -1,16 +1,14 @@
 {
+  "include": ["lib"],
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["es2017", "dom"],
-    "module": "esnext",
-    "rootDir": "./src",
-    "moduleResolution": "node",
+    "target": "es2020",
+    "module": "commonjs",
+    "rootDir": "lib",
+    "sourceMap": false,
     "esModuleInterop": true,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "paths": {}
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", ".vscode"]
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {},
+    "noImplicitAny": true
+  }
 }
