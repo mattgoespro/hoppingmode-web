@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2016",
     "lib": ["es2017", "dom"],
-    "module": "esnext",
+    "module": "ES6",
     "rootDir": "./lib",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "paths": {}
+    "paths": {},
+    "skipLibCheck": true
   },
   "include": ["lib/**/*"],
   "exclude": ["node_modules", ".vscode"]
