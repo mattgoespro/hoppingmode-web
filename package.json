@@ -1,12 +1,12 @@
 {
   "name": "@mattgoespro/hoppingmode-web-core",
   "author": "mattgoespro",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "description": "Shared package for hoppingmode-web-api and hoppingmode-web-frontend.",
   "main": "index.ts",
   "scripts": {
     "test": "test",
-    "deploy": "npm version minor && npm publish --access private"
+    "deploy": "npm version build && npm publish --access private"
   },
   "repository": {
     "type": "git",
