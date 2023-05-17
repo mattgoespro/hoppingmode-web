@@ -1,15 +1,8 @@
-import { Encoding } from "crypto";
-
 export interface RepositorySummary {
   name: string;
   description: string;
   pinned: boolean;
   githubUrl: string;
-}
-
-export interface ProjectSpecification {
-  title: string;
-  technicalSkills: string[];
 }
 
 export interface Stats {
@@ -20,13 +13,11 @@ export interface Stats {
 
 export interface ReadmeDocument {
   content: string;
-  encoding: Encoding;
 }
 
 export interface Repository {
   name: string;
   stats: Stats;
-  projectSpec: ProjectSpecification;
   readme: ReadmeDocument;
 }
 
