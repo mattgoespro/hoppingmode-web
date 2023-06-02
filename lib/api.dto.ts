@@ -19,7 +19,7 @@ export interface ProjectReadmeViewDTO {
 export interface ProjectViewDTO {
   name: string;
   stats: ProjectStatsViewDTO;
-  readme: ProjectReadmeViewDTO;
+  readme?: ProjectReadmeViewDTO;
 }
 
 export type ProjectCodingLanguagesDTO = { [key: string]: number };
