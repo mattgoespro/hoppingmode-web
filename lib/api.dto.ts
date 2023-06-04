@@ -1,5 +1,3 @@
-import { Encoding } from "crypto";
-
 export interface ProjectListDTO {
   name: string;
   description: string;
@@ -15,7 +13,6 @@ export interface ProjectStatsViewDTO {
 
 export interface ProjectReadmeViewDTO {
   content: string;
-  encoding: Encoding;
 }
 
 export interface ProjectViewDTO {
