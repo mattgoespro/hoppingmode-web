@@ -1,2 +1,8 @@
+.git
 .eslintrc.js
+.prettierrc.js
 .vscode
+src
+babel.config.js
+webpack.config.ts
+README.md

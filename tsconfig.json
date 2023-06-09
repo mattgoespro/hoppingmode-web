@@ -1,17 +1,22 @@
 {
+  "include": ["src/lib/**/*"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "target": "es2016",
-    "lib": ["es2017", "dom"],
-    "module": "ES6",
-    "rootDir": "./lib",
+    "lib": ["es2017"],
+    "module": "commonjs",
     "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "./dist",
+    "declaration": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "paths": {},
-    "skipLibCheck": true
-  },
-  "include": ["lib/**/*"],
-  "exclude": ["node_modules", ".vscode"]
+    "paths": {
+      "@hoppingmode-web/api/*": ["src/lib/api/*"]
+    },
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "inlineSourceMap": false
+  }
 }
