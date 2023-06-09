@@ -3,6 +3,8 @@
 .prettierrc.js
 .vscode
 src
+scripts
 babel.config.js
 webpack.config.ts
 README.md
+*.tgz
