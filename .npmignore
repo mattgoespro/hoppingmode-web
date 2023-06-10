@@ -6,5 +6,6 @@ src
 scripts
 babel.config.js
 webpack.config.ts
+tsconfig.json
 README.md
 *.tgz
