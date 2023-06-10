@@ -1,8 +1,8 @@
 {
   "author": "mattgoespro",
-  "name": "@mattgoespro/hoppingmode-web-core",
+  "name": "@mattgoespro/hw",
   "description": "Shared package for hoppingmode-web-api and hoppingmode-web-frontend.",
-  "version": "1.0.4",
+  "version": "1.0.1",
   "homepage": "https://github.com/mattgoespro/hoppingmode-web#readme",
   "repository": {
     "type": "git",
