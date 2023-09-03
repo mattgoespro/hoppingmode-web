@@ -3,7 +3,7 @@
 ARG="$1"
 
 # if ARG is not empty and ARG is not --dry-run
-if [[ -n "$ARG" && "$ARG" != "--dry-run" ]]; then
+if [ -n "$ARG" ]  && [ "$ARG" != "--dry-run" ]; then
     echo "Invalid argument: $ARG"
     exit 1
 fi
@@ -13,11 +13,7 @@ echo "-----------------------------"
 
 echo "Building from webpack..."
 
-npm run build
-
-ERROR=$?
-
-if [ "$ERROR" -ne 0 ]; then
+if ! npm run build; then
     echo -e "\n-----------------------------"
     echo -e "\nError: Build failed"
     exit 1
@@ -32,5 +28,9 @@ fi
 
 echo "Publishing..."
 
-eval "npm publish $FLAGS"
+if ! eval "npm publish $FLAGS"; then
+    echo -e "\n-----------------------------"
+    echo -e "\nError: Publish failed"
+    exit 1
+fi
 

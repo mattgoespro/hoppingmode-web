@@ -2,6 +2,24 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "christian-kohler.npm-intellisense"
+    "mgmcdermott.vscode-language-babel",
+    "shakram02.bash-beautify",
+    "mads-hartmann.bash-ide-vscode",
+    "jeff-hykin.better-shellscript-syntax",
+    "ms-azuretools.vscode-docker",
+    "usernamehw.errorlens",
+    "felipecaputo.git-project-manager",
+    "github.copilot-chat",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "davidanson.vscode-markdownlint",
+    "pkief.material-icon-theme",
+    "herrmannplatz.npm-dependency-links",
+    "christian-kohler.npm-intellisense",
+    "mskelton.npm-outdated",
+    "fabiospampinato.vscode-open-in-npm",
+    "timonwong.shellcheck",
+    "richie5um2.vscode-sort-json",
+    "github.copilot"
   ]
 }
