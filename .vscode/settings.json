@@ -1,0 +1,40 @@
+{
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.shellcheck": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "eslint.execArgv": ["--config", "eslint.config.js"],
+  "eslint.useFlatConfig": true,
+  "eslint.validate": ["javascript", "typescript"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true
+  },
+  "terminal.integrated.defaultProfile.windows": "bash-node",
+  "terminal.integrated.profiles.windows": {
+    "bash-node": {
+      "args": ["-i"],
+      "color": "terminal.ansiGreen",
+      "env": {
+        "PATH": "${env:PATH}:${workspaceFolder}\\node_modules\\.bin"
+      },
+      "icon": "terminal-bash",
+      "overrideName": true,
+      "path": "${env:ProgramFiles}\\Git\\bin\\bash.exe"
+    }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

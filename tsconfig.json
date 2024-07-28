@@ -1,22 +1,19 @@
 {
-  "include": ["src/lib/**/*"],
+  "include": ["lib"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "target": "es2016",
-    "lib": ["es2017"],
     "module": "commonjs",
+    "target": "es2020",
+    "lib": ["esnext"],
     "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "./dist",
+    "outDir": "dist",
     "declaration": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
-    "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "newLine": "lf",
     "paths": {
-      "@hoppingmode-web/api/*": ["src/lib/api/*"]
-    },
-    "skipLibCheck": true,
-    "sourceMap": false,
-    "inlineSourceMap": false
+      "@hoppingmode-web/api/*": ["lib/lib/api/*"]
+    }
   }
 }

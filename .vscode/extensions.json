@@ -2,7 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "mgmcdermott.vscode-language-babel",
     "shakram02.bash-beautify",
     "mads-hartmann.bash-ide-vscode",
     "jeff-hykin.better-shellscript-syntax",
@@ -10,6 +9,7 @@
     "usernamehw.errorlens",
     "felipecaputo.git-project-manager",
     "github.copilot-chat",
+    "github.copilot",
     "yzhang.markdown-all-in-one",
     "shd101wyy.markdown-preview-enhanced",
     "davidanson.vscode-markdownlint",
@@ -20,6 +20,10 @@
     "fabiospampinato.vscode-open-in-npm",
     "timonwong.shellcheck",
     "richie5um2.vscode-sort-json",
-    "github.copilot"
+    "shd101wyy.markdown-preview-enhanced",
+    "foxundermoon.shell-format",
+    "better-ts-errors.better-ts-errors",
+    "eamodio.gitlens",
+    "meganrogge.template-string-converter"
   ]
 }
