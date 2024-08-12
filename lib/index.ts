@@ -1,1 +1,1 @@
-export * as hw from "./hw-api/model";
+export * from "./hw-api";
