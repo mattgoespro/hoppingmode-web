@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "newLine": "lf",
     "paths": {
-      "@hw/model": ["lib/hw/*"]
+      "@hw/api": ["lib/api/*"]
     }
   }
 }
