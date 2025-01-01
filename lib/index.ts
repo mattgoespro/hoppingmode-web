@@ -1,1 +1,1 @@
-export * from "./hw-api";
+export * from "./hw/model";

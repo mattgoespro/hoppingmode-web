@@ -4,7 +4,6 @@ function usage() {
     echo "Usage: npm-publish.sh [-d] [-b]"
     echo "  -d: dry run"
     echo "  -b: build"
-    exit 1
 }
 
 build=false
@@ -21,10 +20,12 @@ while getopts ":bd" opt; do
         ;;
     \?)
         echo "Invalid option: $OPTARG" 1>&2
+        usage
         exit 1
         ;;
-    :)
-        echo "Invalid option: $OPTARG requires an argument" 1>&2
+    *)
+        echo "Invalid option: $OPTARG" 1>&2
+        usage
         exit 1
         ;;
     esac

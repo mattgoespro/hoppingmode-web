@@ -9,9 +9,7 @@
     "usernamehw.errorlens",
     "felipecaputo.git-project-manager",
     "github.copilot-chat",
-    "github.copilot",
     "yzhang.markdown-all-in-one",
-    "shd101wyy.markdown-preview-enhanced",
     "davidanson.vscode-markdownlint",
     "pkief.material-icon-theme",
     "herrmannplatz.npm-dependency-links",
@@ -20,10 +18,10 @@
     "fabiospampinato.vscode-open-in-npm",
     "timonwong.shellcheck",
     "richie5um2.vscode-sort-json",
-    "shd101wyy.markdown-preview-enhanced",
-    "foxundermoon.shell-format",
     "better-ts-errors.better-ts-errors",
-    "eamodio.gitlens",
-    "meganrogge.template-string-converter"
+    "meganrogge.template-string-converter",
+    "yoavbls.pretty-ts-errors",
+    "foxundermoon.shell-format",
+    "github.copilot"
   ]
 }

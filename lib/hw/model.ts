@@ -3,14 +3,14 @@
  *
  * @param name - The name of the project.
  * @param description - The description of the project.
- * @param pinned - Whether the project's related repository is pinned on the GitHub profile.
- * @param githubUrl - The GitHub URL of the project repository.
+ * @param url - The URL of the project repository.
+ * @param pinned - Whether the project is pinned to the GitHub profile.
  */
 export interface ProjectSummaryDTO {
   name: string;
   description: string;
-  githubUrl: string;
-  githubIsPinned: boolean;
+  url: string;
+  pinned: boolean;
 }
 
 /**

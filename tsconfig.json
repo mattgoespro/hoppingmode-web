@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "newLine": "lf",
     "paths": {
-      "@hoppingmode-web/api/*": ["lib/lib/api/*"]
+      "@hw/model": ["lib/hw/*"]
     }
   }
 }
