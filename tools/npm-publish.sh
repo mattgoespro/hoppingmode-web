@@ -49,7 +49,7 @@ fi
 
 echo "Publishing npm package..."
 
-if ! npm publish "$FLAGS"; then
+if ! npm publish "$FLAGS" --access restricted --scope @mattgoespro/hw; then
     echo -e "\nerror: publish failed"
     exit 1
 fi
